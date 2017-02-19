@@ -13,6 +13,9 @@
 		17AF847A1E58816100C0E47A /* myPushNotification.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17AF84781E58816100C0E47A /* myPushNotification.xcdatamodeld */; };
 		17AF847C1E58816100C0E47A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17AF847B1E58816100C0E47A /* Assets.xcassets */; };
 		17AF847F1E58816100C0E47A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17AF847D1E58816100C0E47A /* LaunchScreen.storyboard */; };
+		17AF84871E5881C700C0E47A /* notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF84861E5881C700C0E47A /* notification.swift */; };
+		17AF84891E58848E00C0E47A /* subway.json in Resources */ = {isa = PBXBuildFile; fileRef = 17AF84881E58848E00C0E47A /* subway.json */; };
+		17EADC801E59D5E900CFCF4A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EADC7F1E59D5E800CFCF4A /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,10 @@
 		17AF847B1E58816100C0E47A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17AF847E1E58816100C0E47A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17AF84801E58816100C0E47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17AF84861E5881C700C0E47A /* notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notification.swift; sourceTree = "<group>"; };
+		17AF84881E58848E00C0E47A /* subway.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = subway.json; sourceTree = "<group>"; };
+		17EADC7E1E59D5E800CFCF4A /* myPushNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = myPushNotification.entitlements; sourceTree = "<group>"; };
+		17EADC7F1E59D5E800CFCF4A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17EADC801E59D5E900CFCF4A /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +48,7 @@
 		17AF84651E58816100C0E47A = {
 			isa = PBXGroup;
 			children = (
+				17EADC7F1E59D5E800CFCF4A /* AudioToolbox.framework */,
 				17AF84701E58816100C0E47A /* myPushNotification */,
 				17AF846F1E58816100C0E47A /* Products */,
 			);
@@ -56,12 +65,15 @@
 		17AF84701E58816100C0E47A /* myPushNotification */ = {
 			isa = PBXGroup;
 			children = (
+				17EADC7E1E59D5E800CFCF4A /* myPushNotification.entitlements */,
 				17AF84711E58816100C0E47A /* AppDelegate.swift */,
 				17AF84731E58816100C0E47A /* ViewController.swift */,
+				17AF84861E5881C700C0E47A /* notification.swift */,
 				17AF84751E58816100C0E47A /* Main.storyboard */,
 				17AF847B1E58816100C0E47A /* Assets.xcassets */,
 				17AF847D1E58816100C0E47A /* LaunchScreen.storyboard */,
 				17AF84801E58816100C0E47A /* Info.plist */,
+				17AF84881E58848E00C0E47A /* subway.json */,
 				17AF84781E58816100C0E47A /* myPushNotification.xcdatamodeld */,
 			);
 			path = myPushNotification;
@@ -100,6 +112,14 @@
 					17AF846D1E58816100C0E47A = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 5C9A67KXWT;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -128,6 +148,7 @@
 			files = (
 				17AF847F1E58816100C0E47A /* LaunchScreen.storyboard in Resources */,
 				17AF847C1E58816100C0E47A /* Assets.xcassets in Resources */,
+				17AF84891E58848E00C0E47A /* subway.json in Resources */,
 				17AF84771E58816100C0E47A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17AF84871E5881C700C0E47A /* notification.swift in Sources */,
 				17AF84741E58816100C0E47A /* ViewController.swift in Sources */,
 				17AF847A1E58816100C0E47A /* myPushNotification.xcdatamodeld in Sources */,
 				17AF84721E58816100C0E47A /* AppDelegate.swift in Sources */,
@@ -256,7 +278,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = myPushNotification/myPushNotification.entitlements;
 				INFOPLIST_FILE = myPushNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.ac.mnit.myPushNotification;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -267,7 +291,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = myPushNotification/myPushNotification.entitlements;
 				INFOPLIST_FILE = myPushNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.ac.mnit.myPushNotification;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,6 +319,7 @@
 				17AF84851E58816100C0E47A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
